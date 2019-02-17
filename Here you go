@@ -1,0 +1,60 @@
+function getTotalInventory(filter) {
+  var inventory = [{
+      inventoryPoster: 5,
+      inventoryTarp: 7,
+      area: 'GMA',
+      date: '01/10/2019'
+    },
+    {
+      inventoryPoster: 6,
+      inventoryTarp: 8,
+      area: 'GMA',
+      date: '01/11/2019'
+    },
+    {
+      inventoryPoster: 7,
+      inventoryTarp: 9,
+      area: 'GMA',
+      date: '01/12/2019'
+    },
+    {
+      inventoryPoster: 8,
+      inventoryTarp: 10,
+      area: 'NCR',
+      date: '01/10/2019'
+    },
+    {
+      inventoryPoster: 9,
+      inventoryTarp: 11,
+      area: 'NCR',
+      date: '01/11/2019'
+    },
+    {
+      inventoryPoster: 10,
+      inventoryTarp: 12,
+      area: 'NCR',
+      date: '01/12/2019'
+    }
+  ];
+
+  if (filter) {
+    var totalTarpSum = 0;
+    var totalPosterSum = 0;
+    for (var i = 0; i < inventory.length; i++) {
+      if (filter === inventory[i].area) {
+        totalPosterSum += inventory[i].inventoryPoster;
+        totalTarpSum += inventory[i].inventoryTarp;
+      }
+      if (filter === inventory[i].date) {
+        totalPosterSum += inventory[i].inventoryPoster;
+        totalTarpSum += inventory[i].inventoryTarp;
+      }
+    }
+    console.log('Total Tarp: ' + totalPosterSum + '\n' + 'Total Poster: ' + totalTarpSum);
+  } else {
+
+    for (var j = 0; j < inventory.length; j++) {
+      console.log(inventory[j]);
+    }
+  }
+}
